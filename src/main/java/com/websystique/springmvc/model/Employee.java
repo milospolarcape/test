@@ -16,15 +16,15 @@ public class Employee {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Size(min=3, max=50)
+	@Size(min=3, max=45)
 	@Column(name = "Email", nullable = false, unique=true)
 	private String Email;
 	
-	@Size(min=3, max=50)
+	@Size(min=1, max=45)
 	@Column(name = "position", nullable = false)
 	private String position;
 	
-	@Size(min=3, max=50)
+	@Size(min=3, max=45)
 	@Column(name = "name", nullable = false)
 	private String name;
 	

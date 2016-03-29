@@ -10,8 +10,6 @@ public interface EmployeeService {
 	
 	void saveEmployee(Employee employee);
 	
-	void updateEmployee(Employee employee);
-	
 	void deleteEmployeeByEmail(String email);
 
 	List<Employee> findAllEmployees(); 

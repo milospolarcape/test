@@ -46,10 +46,8 @@ public class AppController {
 
 	@Autowired
 	EmployeeService service;
-	
 	@Autowired
 	MessageSource messageSource;
-
 	/*
 	 * This method will list all existing employees.
 	 */
@@ -60,7 +58,6 @@ public class AppController {
 		model.addAttribute("employees", employees);
 		return "allemployees";
 	}
-
 	/*
 	 * This method will provide the medium to add a new employee.
 	 */
@@ -71,7 +68,6 @@ public class AppController {
 		model.addAttribute("edit", false);
 		return "registration";
 	}
-
 	/*
 	 * This method will be called on form submission, handling POST request for
 	 * saving employee in database. It also validates the user input
@@ -79,26 +75,18 @@ public class AppController {
 	@RequestMapping(value = { "/new" }, method = RequestMethod.POST)
 	public String saveEmployee(@Valid Employee employee, BindingResult result,
 			ModelMap model) {
-
 		if (result.hasErrors()) {
 			return "registration";
 		}
-
-		
 		if(!service.isEmployeeEmailUnique(employee.getId(), employee.getEmail())){
 			FieldError EmailError =new FieldError("employee","name",messageSource.getMessage("non.unique.Email", new String[]{employee.getEmail()}, Locale.getDefault()));
 		    result.addError(EmailError);
 			return "registration";
 		}
-		
 service.saveEmployee(employee);
-
 		model.addAttribute("success", "Employee " + employee.getName() + " registered successfully");
 		return "success";
 	}
-
-
-	
 	/*
 	 * This method will delete an employee by it's name value.
 	 */
@@ -107,16 +95,11 @@ service.saveEmployee(employee);
 		service.deleteEmployeeByEmail(email);
 		return "redirect:/list";
 	}
-	
-	
 	@RequestMapping(value ={"/Upload"} , method = RequestMethod.POST)
 	public String save(@ModelAttribute("uploadForm") FileUploadForm uploadForm, Model map) {
-		
-		
 		MultipartFile files= uploadForm.getFiles();
 		String fileName = files.getOriginalFilename();
 		if(null != files&& !files.isEmpty()&&fileName.endsWith(".pdf")) { 
-				
 PdfReader reader;
 try {
 	files.transferTo(new File("C:\\Users\\Verica\\Documents\\workspace\\uploads\\"+ fileName));
@@ -277,6 +260,4 @@ return "success";
 		        				map.addAttribute("message", "No pdf attachments with pattern found in the emails");
 	        					return "allemployees";
 }
-}	
-	
-
+}
