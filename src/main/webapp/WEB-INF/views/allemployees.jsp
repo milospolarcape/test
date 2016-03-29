@@ -6,7 +6,30 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>Mail info</title>
-
+<script>
+	function hideshow(){
+		state=document.getElementById("hideshow").value;
+		if(state==="show"){
+			document.getElementById("hideshow").value="hide";
+			document.getElementById("database").style.display="block";
+						}
+		else{
+			document.getElementById("hideshow").value="show";
+			document.getElementById("database").style.display="none";
+		}
+	}
+	function hideshown(){
+	state=document.getElementById("hideshow1").value;
+	if(state==="show"){
+		document.getElementById("hideshow1").value="hide";
+		document.getElementById("form1").style.display="block";
+					}
+	else{
+		document.getElementById("hideshow1").value="show";
+		document.getElementById("form1").style.display="none";
+		}
+	}
+	</script>
 	<style>
 		tr:first-child{
 			font-weight: bold;
@@ -31,30 +54,7 @@ border-width: 1px;
 </head>
 <body>
 	<h2>List of Employees</h2>	
-	<script>
-	function hideshow(){
-		state=document.getElementById("hideshow").value;
-		if(state==="show"){
-			document.getElementById("hideshow").value="hide";
-			document.getElementById("database").style.display="block";
-						}
-		else{
-			document.getElementById("hideshow").value="show";
-			document.getElementById("database").style.display="none";
-		}
-	}
-	function hideshown(){
-	state=document.getElementById("hideshow1").value;
-	if(state==="show"){
-		document.getElementById("hideshow1").value="hide";
-		document.getElementById("form1").style.display="block";
-					}
-	else{
-		document.getElementById("hideshow1").value="show";
-		document.getElementById("form1").style.display="none";
-		}
-	}
-	</script>
+	
 	<table id="database" >
 		<tr>
 			<td>NAME</td><td>Position</td><td>Email</td><td></td>
