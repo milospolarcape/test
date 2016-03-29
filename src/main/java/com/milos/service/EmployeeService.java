@@ -1,8 +1,8 @@
-package com.websystique.springmvc.service;
+package com.milos.service;
 
 import java.util.List;
 
-import com.websystique.springmvc.model.Employee;
+import com.milos.model.Employee;
 
 public interface EmployeeService {
 

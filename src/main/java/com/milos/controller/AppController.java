@@ -1,4 +1,4 @@
-package com.websystique.springmvc.controller;
+package com.milos.controller;
 
 import java.io.File;
 import java.io.IOException;
@@ -34,9 +34,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.parser.PdfTextExtractor;
-import com.websystique.springmvc.form.FileUploadForm;
-import com.websystique.springmvc.model.Employee;
-import com.websystique.springmvc.service.EmployeeService;
+import com.milos.form.FileUploadForm;
+import com.milos.model.Employee;
+import com.milos.service.EmployeeService;
 
 
 

@@ -1,4 +1,4 @@
-package com.websystique.springmvc.configuration;
+package com.milos.configuration;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
